@@ -1,0 +1,30 @@
+{
+  "name": "customgform-lib",
+  "private": true,
+  "version": "1.0.0",
+  "description": "CustomGForm",
+  "main": "index.js",
+  "namespace": "@customgform",
+  "workspaces": [
+    "./packages/react-customgform"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IOZ/customgform-lib.git"
+  },
+  "keywords": [
+    "CustomGform",
+    "Google",
+    "Form",
+    "Form"
+  ],
+  "author": "customgform",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IOZ/customgform-lib/issues"
+  },
+  "homepage": "https://github.com/IOZ/customgform-lib#readme"
+}

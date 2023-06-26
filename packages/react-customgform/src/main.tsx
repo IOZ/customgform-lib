@@ -1,3 +1,3 @@
 // lib/main.js
-import CustomGForm from './App'
+import CustomGForm from './CustomGForm'
 export { CustomGForm }

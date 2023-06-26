@@ -1,0 +1,14 @@
+{
+  "name": "@customgform/customgform-core",
+  "private": true,
+  "version": "1.0.1",
+  "type": "module",
+  "files": [
+    "index.ts"
+  ],
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    "import": "./index.ts"
+  }
+}

@@ -6,7 +6,7 @@
   "main": "index.js",
   "namespace": "@customgform",
   "workspaces": [
-    "./packages/react-customgform"
+    "./packages/*"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

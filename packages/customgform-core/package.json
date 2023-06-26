@@ -1,6 +1,6 @@
 {
-  "name": "@customgform/customgform-core",
-  "private": true,
+  "name": "@customgform-lib/customgform-core",
+  "private": false,
   "version": "1.0.1",
   "type": "module",
   "files": [

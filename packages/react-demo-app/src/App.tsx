@@ -1,4 +1,4 @@
-import { CustomGForm } from '@customgform/react-customgform';
+import { CustomGForm } from '@customgform-lib/react-customgform';
 
 function App() {
   return (

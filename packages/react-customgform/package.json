@@ -1,7 +1,7 @@
 {
   "name": "@customgform-lib/react-customgform",
   "private": false,
-  "version": "1.0.3",
+  "version": "1.0.9",
   "type": "module",
   "main": "./dist/react-customgform.umd.cjs",
   "module": "./dist/react-customgform.js",
@@ -21,7 +21,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@customgform/customgform-core": "^1.0.1"
+    "@customgform-lib/customgform-core": "^1.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",
@@ -35,5 +35,9 @@
     "typescript": "^5.0.2",
     "vite": "^4.3.9",
     "vite-plugin-dts": "^2.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IOZ/customgform-lib.git"
   }
 }

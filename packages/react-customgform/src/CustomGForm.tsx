@@ -1,21 +1,10 @@
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useScript } from './hooks/useScript';
 import { CDN_LIB } from '@customgform-lib/customgform-core';
 
-declare global {
-  interface Window { CustomGForm: any; }
-}
+import type { CustomGFormProps } from './types';
 
-export type CustomGFormProps = {
-  formId: string;
-  mode?: 'standard' | 'popup';
-  label?: string;
-  inlineStyles?: string;
-  // eslint-disable-next-line
-  [x:string]: any;
-};
-
-const CustomGForm = (props: CustomGFormProps) => {
+export const CustomGForm: React.FC<CustomGFormProps> = (props) => {
   const { 
     formId,
     mode = 'standard',
@@ -42,10 +31,8 @@ const CustomGForm = (props: CustomGFormProps) => {
   }, [status])
 
   return (
-    <>
-      <div data-customgform={formId} {...modeProps} {...restProps}/>
-    </>
+    <div data-customgform={formId} {...modeProps} {...restProps}/>
   )
 }
 
-export default CustomGForm
+export default CustomGForm;

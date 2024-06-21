@@ -10,25 +10,25 @@ const LIB_NAME = 'react-customgform';
 export default defineConfig({
   plugins: [
     react(),
-    dts({
-      insertTypesEntry: true,
-    }),
+    dts(),
   ],
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/main.tsx'),
       name: LIB_NAME,
-      fileName: LIB_NAME,
+      formats: ['es', 'umd'],
+      fileName: (format) => `${LIB_NAME}.${format}.js`
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ['react'],
+      external: ['react', 'react-dom'],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {
           react: 'React',
+          'react-dom': 'ReactDOM',
         },
       },
     },

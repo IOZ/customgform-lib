@@ -7,5 +7,7 @@ export type CustomGFormProps = {
   mode?: 'standard' | 'popup';
   label?: string;
   inlineStyles?: string;
-  [x:string]: any;
+  
+  buttonClassName?: string;
+  prefillFields?: { [fieldId: string]: string | number; } | null;
 };

@@ -1,7 +1,7 @@
 {
   "name": "@customgform-lib/react-customgform",
   "private": false,
-  "version": "1.0.13",
+  "version": "1.0.14",
   "type": "module",
   "main": "dist/react-customgform.umd.js",
   "module": "dist/react-customgform.es.js",

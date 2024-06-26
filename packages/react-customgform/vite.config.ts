@@ -14,10 +14,8 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/main.tsx'),
+      entry: path.resolve(__dirname, 'src/CustomGForm.tsx'),
       name: LIB_NAME,
-      formats: ['es', 'umd'],
-      fileName: (format) => `${LIB_NAME}.${format}.js`
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
@@ -28,7 +26,7 @@ export default defineConfig({
         // for externalized deps
         globals: {
           react: 'React',
-          'react-dom': 'ReactDOM',
+        //   'react-dom': 'ReactDOM',
         },
       },
     },

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import * as React from 'react';
 
 export type UseScriptStatus = 'idle' | 'loading' | 'ready' | 'error'
 export interface UseScriptOptions {
@@ -27,7 +27,7 @@ export function useScript(
   src: string | null,
   options?: UseScriptOptions,
 ): UseScriptStatus {
-  const [status, setStatus] = useState<UseScriptStatus>(() => {
+  const [status, setStatus] = React.useState<UseScriptStatus>(() => {
     if (!src || options?.shouldPreventLoad) {
       return 'idle'
     }
@@ -40,7 +40,7 @@ export function useScript(
     return cachedScriptStatuses[src] ?? 'loading'
   })
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!src || options?.shouldPreventLoad) {
       return
     }

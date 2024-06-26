@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
-import { useScript } from './hooks/useScript';
+import * as React from 'react';
 import { CDN_LIB } from '@customgform-lib/customgform-core';
 
+import { useScript } from './hooks/useScript';
 import type { CustomGFormProps } from './types';
 import { prefillObjectToString } from './utils/prefill';
 
-export const CustomGForm: React.FC<CustomGFormProps> = (props) => {
+const CustomGForm: React.FC<CustomGFormProps> = (props) => {
   const { 
     formId,
     mode = 'standard',
@@ -13,6 +13,7 @@ export const CustomGForm: React.FC<CustomGFormProps> = (props) => {
     inlineStyles = '',
     buttonClassName = '',
     prefillFields = null,
+    __formConfig = null,
     ...restProps
   } = props;
 
@@ -27,11 +28,18 @@ export const CustomGForm: React.FC<CustomGFormProps> = (props) => {
     'data-button_class': buttonClassName,
   } : {};
 
+  
+  try {
+    if (__formConfig) {
+    modeProps['data-customgform-config'] = JSON.stringify(__formConfig);
+    }
+  } catch {}
+  
   if (prefillFields) {
     modeProps['data-prefill_fields'] = prefillObjectToString(prefillFields);
   }
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (typeof window.CustomGForm !== 'undefined') {
       window.CustomGForm.destroy();
       window.CustomGForm.render();

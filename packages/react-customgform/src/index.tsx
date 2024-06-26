@@ -5,8 +5,9 @@ import CustomGForm from './CustomGForm.tsx'
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     {/* standard mode */}
-    {/* <CustomGForm formId="clj5flan90005wnju2yq4k38b"/> */}
+    <CustomGForm formId="clj5flan90005wnju2yq4k38b"/>
 
+    {/* popup mode */}
     <style>
       {`
         .btn { 
@@ -23,9 +24,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         }
       `}
     </style>
-
-    {/* popup mode */}
-    <div style={{ textAlign: 'center', margin: '20px' }}>
+    <div style={{ margin: '20px' }}>
       <CustomGForm 
         formId="clj5flan90005wnju2yq4k38b" 
         mode='popup' 

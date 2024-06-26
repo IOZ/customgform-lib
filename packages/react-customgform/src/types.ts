@@ -10,4 +10,6 @@ export type CustomGFormProps = {
   
   buttonClassName?: string;
   prefillFields?: { [fieldId: string]: string | number; } | null;
+  // for preview purposes
+  __formConfig?: any
 };

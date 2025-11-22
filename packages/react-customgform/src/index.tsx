@@ -35,6 +35,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
           '325391704': 'John',
           '1801257527': 'user@gmail.com',
         }}
+        hiddenFields={['325391704']}
       />
     </div>
   </React.StrictMode>,

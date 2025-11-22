@@ -13,6 +13,7 @@ const CustomGForm: React.FC<CustomGFormProps> = (props) => {
     inlineStyles = '',
     buttonClassName = '',
     prefillFields = null,
+    hiddenFields = null,
     __formConfig = null,
     ...restProps
   } = props;
@@ -37,6 +38,10 @@ const CustomGForm: React.FC<CustomGFormProps> = (props) => {
   
   if (prefillFields) {
     modeProps['data-prefill_fields'] = prefillObjectToString(prefillFields);
+  }
+
+  if (hiddenFields) {
+    modeProps['data-hidden_fields'] = hiddenFields?.join(';');
   }
 
   React.useEffect(() => {

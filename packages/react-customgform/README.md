@@ -36,6 +36,7 @@ Common props you may want to specify include:
 
 - `formId` - unique form id, taken from https://customgform.com/
 - `prefillFields` - e.g `{ '1801257527': 'user@gmail.com' }` list of fields to prefill, separated by semicolon
+- `hiddenFields` - e.g `['1801257527', '1801257527']` list of fields to hide
 - `mode` - `standard | popup`, form display mode
   - `label` - Popup button text. If empty: button will be hidden
   - `inlineStyles` - Popup button inline styles
@@ -58,6 +59,7 @@ function Example() {
       '325391704': 'John',
       '1801257527': 'user@gmail.com',
     }}
+    hiddenFields={['325391704']}
   />;
 }
 ```

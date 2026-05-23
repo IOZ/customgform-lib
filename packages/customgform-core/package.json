@@ -1,7 +1,7 @@
 {
   "name": "@customgform-lib/customgform-core",
   "private": false,
-  "version": "1.0.1",
+  "version": "1.1.0",
   "type": "module",
   "files": [
     "dist"
@@ -19,6 +19,15 @@
     "build": "tsc -p tsconfig.json",
     "prepack": "npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IOZ/customgform-lib",
+    "directory": "packages/customgform-core"
+  },
+  "bugs": {
+    "url": "https://github.com/IOZ/customgform-lib/issues"
+  },
+  "homepage": "https://github.com/IOZ/customgform-lib/tree/master/packages/customgform-core",
   "devDependencies": {
     "typescript": "^5.5.2"
   }

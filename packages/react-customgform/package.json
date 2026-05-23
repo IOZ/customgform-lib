@@ -1,7 +1,7 @@
 {
   "name": "@customgform-lib/react-customgform",
   "private": false,
-  "version": "1.0.16",
+  "version": "1.1.0",
   "type": "module",
   "main": "dist/react-customgform.umd.cjs",
   "module": "dist/react-customgform.js",
@@ -16,7 +16,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@customgform-lib/customgform-core": "^1.0.1",
+    "@customgform-lib/customgform-core": "^1.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -38,6 +38,15 @@
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IOZ/customgform-lib",
+    "directory": "packages/react-customgform"
+  },
+  "bugs": {
+    "url": "https://github.com/IOZ/customgform-lib/issues"
+  },
+  "homepage": "https://github.com/IOZ/customgform-lib/tree/master/packages/react-customgform",
   "keywords": [
     "google-form",
     "forms",

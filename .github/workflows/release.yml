@@ -1,0 +1,82 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Version and publish packages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref_name }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          registry-url: https://registry.npmjs.org
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check for changesets
+        id: changesets
+        run: |
+          if find .changeset -maxdepth 1 -name '*.md' ! -name 'README.md' -print -quit | grep -q .; then
+            echo "has_changesets=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changesets=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Version packages
+        if: steps.changesets.outputs.has_changesets == 'true'
+        run: npm run version-packages
+
+      - name: Build packages
+        run: npm run build
+
+      - name: Configure Git author
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit version updates
+        if: steps.changesets.outputs.has_changesets == 'true'
+        run: |
+          git add package.json package-lock.json .changeset packages
+          git commit -m "chore: version packages [skip ci]"
+
+      - name: Verify npm token
+        run: |
+          if [ -z "${NODE_AUTH_TOKEN:-}" ]; then
+            echo "::error::NPM_TOKEN repository secret is required for npm publishing."
+            exit 1
+          fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish packages
+        run: npm run release:publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
+
+      - name: Push version commit and tags
+        run: git push origin HEAD:${{ github.ref_name }} --follow-tags

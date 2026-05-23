@@ -22,6 +22,33 @@ yarn add @customgform-lib/react-customgform
 pnpm add @customgform-lib/react-customgform
 ```
 
+## Releases
+
+This repository uses Changesets for independent semantic versioning of the npm packages:
+
+- `@customgform-lib/customgform-core`
+- `@customgform-lib/react-customgform`
+
+For the short day-to-day flow, see [RELEASE_CHEATSHEET.md](./RELEASE_CHEATSHEET.md).
+
+For every publishable change, run:
+
+```bash
+npm run changeset
+```
+
+Select the changed package and the SemVer bump type:
+
+- `patch` for bug fixes and packaging-only changes
+- `minor` for backwards-compatible features
+- `major` for breaking changes
+
+Commit the generated `.changeset/*.md` file with your code changes. When the change is pushed to `master`, GitHub Actions versions the changed packages, builds them, publishes them to npm, and pushes the version commit and tags back to the repository.
+
+The release workflow requires an `NPM_TOKEN` repository secret with publish access to the `@customgform-lib` npm scope.
+
+If a `customgform-core` change must be reflected in the built React package, include a changeset for `@customgform-lib/react-customgform` as well.
+
 ## Usage
 
 <CustomGForm 

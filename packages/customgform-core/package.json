@@ -4,11 +4,22 @@
   "version": "1.0.1",
   "type": "module",
   "files": [
-    "index.ts"
+    "dist"
   ],
-  "main": "./index.ts",
-  "module": "./index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    "import": "./index.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.2"
   }
 }

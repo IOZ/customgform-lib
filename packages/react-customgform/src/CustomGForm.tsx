@@ -15,10 +15,11 @@ const CustomGForm: React.FC<CustomGFormProps> = (props) => {
     prefillFields = null,
     hiddenFields = null,
     __formConfig = null,
+    __cdnUrl,
     ...restProps
   } = props;
 
-  const status = useScript(CDN_LIB, {
+  const status = useScript(__cdnUrl ?? CDN_LIB, {
     removeOnUnmount: false,
   });
 

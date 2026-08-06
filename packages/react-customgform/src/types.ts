@@ -31,4 +31,11 @@ export type CustomGFormProps = {
 
   /** debug: Allow to provide custom cdn url, used for debug */
   __cdnUrl?: string;
+
+  /** Override environment URLs (baseHost, apiHost, cdnHost) */
+  __envs?: {
+    baseHost?: string;
+    apiHost?: string;
+    cdnHost?: string;
+  };
 };

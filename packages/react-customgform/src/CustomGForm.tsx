@@ -16,6 +16,7 @@ const CustomGForm: React.FC<CustomGFormProps> = (props) => {
     hiddenFields = null,
     __formConfig = null,
     __cdnUrl,
+    __envs,
     ...restProps
   } = props;
 
@@ -43,6 +44,10 @@ const CustomGForm: React.FC<CustomGFormProps> = (props) => {
 
   if (hiddenFields) {
     modeProps['data-hidden_fields'] = hiddenFields?.join(';');
+  }
+
+  if (__envs) {
+    modeProps['data-envs'] = JSON.stringify(__envs);
   }
 
   React.useEffect(() => {

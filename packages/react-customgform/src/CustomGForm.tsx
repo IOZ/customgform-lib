@@ -14,6 +14,7 @@ const CustomGForm: React.FC<CustomGFormProps> = (props) => {
     buttonClassName = '',
     prefillFields = null,
     hiddenFields = null,
+    theme,
     __formConfig = null,
     __cdnUrl,
     __envs,
@@ -48,6 +49,10 @@ const CustomGForm: React.FC<CustomGFormProps> = (props) => {
 
   if (__envs) {
     modeProps['data-envs'] = JSON.stringify(__envs);
+  }
+
+  if (theme) {
+    modeProps['data-theme'] = theme;
   }
 
   React.useEffect(() => {

@@ -4,6 +4,9 @@ declare global {
 
 export type DisplayMode = 'standard' | 'popup';
 
+/** Initial color scheme for forms with dark mode enabled. */
+export type ThemeMode = 'light' | 'dark' | 'auto';
+
 export type CustomGFormProps = {
   /** Unique form id from customgform */
   formId: string;
@@ -25,6 +28,12 @@ export type CustomGFormProps = {
   
   /** mode: popup: button class name */
   buttonClassName?: string;
+
+  /** Initial color scheme for forms with dark mode enabled.
+   * 'light' | 'dark' pin the scheme, 'auto' follows the visitor's
+   * system preference (default). The visitor can still flip it with
+   * the in-form toggle when the form owner has enabled it. */
+  theme?: ThemeMode;
   
   /** debug: Generate preview mode without loading data from server */
   __formConfig?: any;

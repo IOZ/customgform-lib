@@ -41,6 +41,7 @@ Common props you may want to specify include:
   - `label` - Popup button text. If empty: button will be hidden
   - `inlineStyles` - Popup button inline styles
   - `buttonClassName` - Popup button own class name
+- `theme` - `light | dark | auto`, initial color scheme for forms with dark mode enabled. `auto` follows the visitor's system preference (default). The visitor can still flip it with the in-form toggle when the form owner has enabled it.
 
 
 ## Example

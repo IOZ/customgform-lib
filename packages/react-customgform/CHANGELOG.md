@@ -1,5 +1,13 @@
 # @customgform-lib/react-customgform
 
+## 2.2.1
+
+### Patch Changes
+
+- f923084: Fix package exports mapping for Node.js SSR and CommonJS compatibility.
+- Updated dependencies [f923084]
+  - @customgform-lib/customgform-core@1.1.1
+
 ## 2.2.0
 
 ### Minor Changes

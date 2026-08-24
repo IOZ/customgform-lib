@@ -1,5 +1,11 @@
 # @customgform-lib/react-customgform
 
+## 2.2.0
+
+### Minor Changes
+
+- a10702b: Support React 19 by moving `react` and `react-dom` to `peerDependencies` and externalizing `react/jsx-runtime`.
+
 ## 2.1.0
 
 ### Minor Changes

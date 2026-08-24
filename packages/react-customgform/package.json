@@ -6,6 +6,14 @@
   "main": "dist/react-customgform.umd.cjs",
   "module": "dist/react-customgform.js",
   "types": "dist/CustomGForm.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/CustomGForm.d.ts",
+      "import": "./dist/react-customgform.js",
+      "require": "./dist/react-customgform.umd.cjs",
+      "default": "./dist/react-customgform.js"
+    }
+  },
   "files": [
     "dist"
   ],

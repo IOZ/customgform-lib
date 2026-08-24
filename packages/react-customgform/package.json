@@ -36,9 +36,12 @@
     "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
     "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/IOZ/customgform-lib",
+    "url": "git+https://github.com/IOZ/customgform-lib.git",
     "directory": "packages/react-customgform"
   },
   "bugs": {

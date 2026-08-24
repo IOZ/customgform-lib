@@ -19,9 +19,12 @@
     "build": "tsc -p tsconfig.json",
     "prepack": "npm run build"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/IOZ/customgform-lib",
+    "url": "git+https://github.com/IOZ/customgform-lib.git",
     "directory": "packages/customgform-core"
   },
   "bugs": {

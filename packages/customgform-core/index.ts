@@ -1,1 +1,5 @@
-export const CDN_LIB = 'https://cdn.customgform.com/cgf.js';
+export * from './src/constants.js';
+export * from './src/types.js';
+export * from './src/prefill.js';
+export * from './src/attributes.js';
+export * from './src/script.js';

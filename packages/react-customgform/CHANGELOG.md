@@ -1,5 +1,13 @@
 # @customgform-lib/react-customgform
 
+## 2.2.3
+
+### Patch Changes
+
+- 350125e: Add `@customgform-lib/vue-customgform`, a Vue 3 integration for CustomGForm. Shared types, constants, prefill serialization, data-attribute building and CDN script loading now live in `@customgform-lib/customgform-core`, and the React component uses them.
+- Updated dependencies [350125e]
+  - @customgform-lib/customgform-core@1.2.0
+
 ## 2.2.2
 
 ### Patch Changes

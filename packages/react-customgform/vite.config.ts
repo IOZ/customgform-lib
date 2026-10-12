@@ -14,7 +14,7 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/CustomGForm.tsx'),
+      entry: path.resolve(import.meta.dirname, 'src/CustomGForm.tsx'),
       name: LIB_NAME,
     },
     rollupOptions: {

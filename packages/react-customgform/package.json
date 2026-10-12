@@ -1,7 +1,7 @@
 {
   "name": "@customgform-lib/react-customgform",
   "private": false,
-  "version": "2.2.1",
+  "version": "2.2.2",
   "type": "module",
   "main": "dist/react-customgform.umd.cjs",
   "module": "dist/react-customgform.js",
@@ -24,7 +24,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@customgform-lib/customgform-core": "^1.1.1"
+    "@customgform-lib/customgform-core": "^1.1.2"
   },
   "devDependencies": {
     "@types/react": "^19.3.0",

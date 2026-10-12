@@ -1,5 +1,13 @@
 # @customgform-lib/react-customgform
 
+## 2.2.2
+
+### Patch Changes
+
+- 6b35882: Fix Dependabot security alerts and upgrade the build toolchain (TypeScript 7, Vite 8, oxlint).
+- Updated dependencies [6b35882]
+  - @customgform-lib/customgform-core@1.1.2
+
 ## 2.2.1
 
 ### Patch Changes

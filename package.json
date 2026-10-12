@@ -13,6 +13,7 @@
   "scripts": {
     "build": "npm run build -w @customgform-lib/customgform-core && npm run build -w @customgform-lib/react-customgform",
     "changeset": "changeset",
+    "lint": "oxlint -c oxlint.config.mjs packages",
     "release:publish": "changeset publish",
     "test": "npm run build",
     "version-packages": "changeset version && npm install --package-lock-only"
@@ -34,6 +35,7 @@
   },
   "homepage": "https://github.com/IOZ/customgform-lib#readme",
   "devDependencies": {
-    "@changesets/cli": "^3.0.3"
+    "@changesets/cli": "^3.0.3",
+    "oxlint": "^1.87.0"
   }
 }

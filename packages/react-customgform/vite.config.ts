@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite'
-import dts from 'vite-plugin-dts';
 import react from '@vitejs/plugin-react'
 import path from "path";
 // https://vitejs.dev/config/
@@ -10,7 +9,6 @@ const LIB_NAME = 'react-customgform';
 export default defineConfig({
   plugins: [
     react(),
-    dts(),
   ],
   build: {
     lib: {

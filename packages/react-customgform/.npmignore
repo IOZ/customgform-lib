@@ -4,4 +4,5 @@ index.html
 tsconfig.json
 tsconfig.node.json
 vite.config.ts
+vitest.config.ts
 yarn.locktsconfig.build.json

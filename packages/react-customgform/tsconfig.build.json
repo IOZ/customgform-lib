@@ -7,6 +7,11 @@
     "rootDir": "src",
     "outDir": "dist"
   },
-  "include": ["src"],
-  "exclude": ["src/vite-env.d.ts"]
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "src/vite-env.d.ts",
+    "src/**/*.test.tsx"
+  ]
 }

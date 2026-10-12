@@ -1,6 +1,12 @@
 # CustomGForm
 
-Simple [React](http://facebook.github.io/react/) component acting as a thin layer over the [CustomGForm - Google Form Customizer](https://customgform.com/)
+Simple [React](http://facebook.github.io/react/) and [Vue](https://vuejs.org/) components acting as a thin layer over the [CustomGForm - Google Form Customizer](https://customgform.com/)
+
+## Packages
+
+- [`@customgform-lib/react-customgform`](./packages/react-customgform) - React component
+- [`@customgform-lib/vue-customgform`](./packages/vue-customgform) - Vue 3 component
+- [`@customgform-lib/customgform-core`](./packages/customgform-core) - shared types, constants and framework-agnostic helpers
 
 ## Installation
 
@@ -28,6 +34,7 @@ This repository uses Changesets for independent semantic versioning of the npm p
 
 - `@customgform-lib/customgform-core`
 - `@customgform-lib/react-customgform`
+- `@customgform-lib/vue-customgform`
 
 For the short day-to-day flow, see [RELEASE_CHEATSHEET.md](./RELEASE_CHEATSHEET.md).
 
@@ -47,7 +54,14 @@ Commit the generated `.changeset/*.md` file with your code changes. When the cha
 
 The release workflow requires an `NPM_TOKEN` repository secret with publish access to the `@customgform-lib` npm scope.
 
-If a `customgform-core` change must be reflected in the built React package, include a changeset for `@customgform-lib/react-customgform` as well.
+If a `customgform-core` change must be reflected in the built React or Vue packages, include changesets for `@customgform-lib/react-customgform` and/or `@customgform-lib/vue-customgform` as well.
+
+## Development
+
+```bash
+npm test   # builds all packages and runs Vitest in each workspace
+npm run lint
+```
 
 ## Usage
 
@@ -66,6 +80,24 @@ If a `customgform-core` change must be reflected in the built React package, inc
   inlineStyles={string}            // defaults -> ''
 />
 ```
+
+## Vue
+
+```bash
+npm install @customgform-lib/vue-customgform
+```
+
+```vue
+<script setup lang="ts">
+import CustomGForm from '@customgform-lib/vue-customgform';
+</script>
+
+<template>
+  <CustomGForm form-id="clj5flan90005wnju2yq4k38b" />
+</template>
+```
+
+See [packages/vue-customgform/README.md](./packages/vue-customgform/README.md) for all props.
 
 ## Example
 

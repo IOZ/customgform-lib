@@ -1,0 +1,57 @@
+{
+  "name": "@customgform-lib/vue-customgform",
+  "private": false,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/vue-customgform.umd.cjs",
+  "module": "dist/vue-customgform.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/vue-customgform.js",
+      "require": "./dist/vue-customgform.umd.cjs",
+      "default": "./dist/vue-customgform.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build && tsc -p tsconfig.build.json",
+    "lint": "oxlint -c ../../oxlint.config.mjs src",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@customgform-lib/customgform-core": "^1.1.2"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IOZ/customgform-lib.git",
+    "directory": "packages/vue-customgform"
+  },
+  "bugs": {
+    "url": "https://github.com/IOZ/customgform-lib/issues"
+  },
+  "homepage": "https://github.com/IOZ/customgform-lib/tree/master/packages/vue-customgform",
+  "keywords": [
+    "google-form",
+    "forms",
+    "form-customizer",
+    "vue"
+  ],
+  "devDependencies": {
+    "@vue/test-utils": "^2.5.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4",
+    "vue": "^3.5.43"
+  }
+}

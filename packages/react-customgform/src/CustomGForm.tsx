@@ -1,21 +1,22 @@
 import * as React from 'react';
-import { CDN_LIB } from '@customgform-lib/customgform-core';
+import { buildDataAttributes, CDN_LIB, renderForms } from '@customgform-lib/customgform-core';
 
 import { useScript } from './hooks/useScript';
 import type { CustomGFormProps } from './types';
-import { prefillObjectToString } from './utils/prefill';
+
+export type { CustomGFormProps, DisplayMode, ThemeMode } from './types';
 
 const CustomGForm: React.FC<CustomGFormProps> = (props) => {
-  const { 
+  const {
     formId,
-    mode = 'standard',
-    label = '',
-    inlineStyles = '',
-    buttonClassName = '',
-    prefillFields = null,
-    hiddenFields = null,
+    mode,
+    label,
+    inlineStyles,
+    buttonClassName,
+    prefillFields,
+    hiddenFields,
     theme,
-    __formConfig = null,
+    __formConfig,
     __cdnUrl,
     __envs,
     ...restProps
@@ -25,45 +26,25 @@ const CustomGForm: React.FC<CustomGFormProps> = (props) => {
     removeOnUnmount: false,
   });
 
-  const modeProps: any = mode === 'popup' ? {
-    'data-mode': mode,
-    'data-label': label,
-    'data-style': inlineStyles,
-    'data-button_class': buttonClassName,
-  } : {};
-
-  
-  try {
-    if (__formConfig) {
-    modeProps['data-customgform-config'] = JSON.stringify(__formConfig);
-    }
-  } catch {}
-  
-  if (prefillFields) {
-    modeProps['data-prefill_fields'] = prefillObjectToString(prefillFields);
-  }
-
-  if (hiddenFields) {
-    modeProps['data-hidden_fields'] = hiddenFields?.join(';');
-  }
-
-  if (__envs) {
-    modeProps['data-envs'] = JSON.stringify(__envs);
-  }
-
-  if (theme) {
-    modeProps['data-theme'] = theme;
-  }
+  const dataAttributes = buildDataAttributes({
+    formId,
+    mode,
+    label,
+    inlineStyles,
+    buttonClassName,
+    prefillFields,
+    hiddenFields,
+    theme,
+    __formConfig,
+    __envs,
+  });
 
   React.useEffect(() => {
-    if (typeof window.CustomGForm !== 'undefined') {
-      window.CustomGForm.destroy();
-      window.CustomGForm.render();
-    }
+    renderForms();
   }, [status])
 
   return (
-    <div data-customgform={formId} {...modeProps} {...restProps}/>
+    <div {...dataAttributes} {...restProps}/>
   )
 }
 
